@@ -1,6 +1,11 @@
-# fake-observation-gen 
+# fake-observation-gen
+Simple test application for generating REST requests.
+***
 Genereerib REST-POST JSON formaadis päringuid.
 
+Saadab konfiguratsioonis näidatud intervalli (msg-gen.scheduler.interval-in-ms) tagant HTTP POST päringuid näidatud aadressile (msg-gathering-server.url).   
+
+Testimiseks on REST sõnumeid vastuvõtev teenus realiseeritud ka siin adapteris (endpoint: localconsumer/).
 
 ### Sõnumi näidis:
 ```json
