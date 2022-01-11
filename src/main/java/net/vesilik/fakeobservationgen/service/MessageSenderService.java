@@ -1,6 +1,7 @@
 package net.vesilik.fakeobservationgen.service;
 
 import lombok.extern.java.Log;
+import net.vesilik.fakeobservationgen.audit.AuditableMethod;
 import net.vesilik.fakeobservationgen.domain.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +18,7 @@ public class MessageSenderService {
     @Value("${msg-gathering-server.url}")
     private String url;
 
+    @AuditableMethod(action="SOME-SPECIFIC-ACTION")
     public void sendMessage(Message msg) {
         String response = restTemplate.postForObject(url, msg, String.class);
         log.info("Return value: " + response);
